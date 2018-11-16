@@ -1,0 +1,36 @@
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#MAILTO=healthchecker@analytical.info
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+
+# add additional partitions to the harbinger db
+0 */2 * * * harbinger /servers/harbinger/harbinger/data-model/management/manage_partitions.py /servers/harbinger/config/site.config.json
+
+# send weekly healthchecker to support
+#0 12 * * 7 root /servers/harbinger/harbinger/management/healthchecker.sh | mailx -a 'Content-Type: text/html' -s "SITE `vital` healthchecker" healthchecker@analytical.info
+
+# restart of harbinger-indexer
+10 */2 * * * root /sbin/restart harbinger-indexer > /tmp/indexer-restart.log
+
+# process the usage logs
+*/10 * * * * harbinger /servers/harbinger/harbinger/management/usage-queue-worker.py
+
+# aggregate data quality statistics
+0 1 * * * harbinger /servers/harbinger/harbinger/data-model/management/data-quality-aggregator.py
+
+# rotate glassfish log
+10 1 * * 7 root /servers/harbinger/harbinger/management/gf_rotate_log > /tmp/gf_rotate_log.log
+
+# kill dm pings
+0 7,19 * * * root /servers/harbinger/harbinger/management/kill_dm_pings.sh

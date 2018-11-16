@@ -1,0 +1,5 @@
+#!/bin/bash
+echo 'Exporting message documentation schema...'
+export PGPASSWORD=hcR3volution!
+psql -X -U harbinger -c "begin; update documentation.data_elements set updated_at = now(); update documentation.element_groupings set updated_at = now(); update documentation.message_element_mappings set updated_at = now(); update documentation.message_types set updated_at = now(); update documentation.data_types set updated_at = now(); update documentation.department_models set updated_at = now(); commit;";
+pg_dump -U harbinger harbinger -a --column-inserts -t documentation.data_elements -t documentation.data_elements_id_seq -t documentation.data_types -t documentation.data_types_id_seq -t documentation.department_models -t documentation.department_models_id_seq -t documentation.element_groupings -t documentation.element_groupings_id_seq -t documentation.message_element_mappings -t documentation.message_element_mappings_id_seq -t documentation.message_types -t documentation.message_types_id_seq > ../default-data/documentation.sql

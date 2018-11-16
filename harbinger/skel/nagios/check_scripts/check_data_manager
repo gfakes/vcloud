@@ -1,0 +1,10 @@
+#!/usr/bin/ruby
+
+output = `sudo /usr/sbin/service data_manager ping`
+
+if output.chomp == "pong"
+  print "Data Manager is running"
+else
+  print "Data Manager is not running"
+  exit 2
+end

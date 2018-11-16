@@ -1,0 +1,13 @@
+2018-08-17 15:55:36,525: INFO: UTILS: starting
+2018-08-17 15:55:36,532: INFO: UTILS: opened Harbinger DB connection to localhost.harbinger-rw
+2018-08-17 15:55:36,532: INFO: build baseline site configuration
+2018-08-17 15:55:36,541: INFO: UTILS: closed Harbinger DB connection to localhost.harbinger-rw
+2018-08-17 15:55:36,541: INFO: UTILS: finished, script runtime was 0:00:00.015933
+2018-08-17 15:56:30,192: INFO: UTILS: starting
+2018-08-17 15:56:30,204: INFO: UTILS: opened Harbinger DB connection to localhost.harbinger-rw
+2018-08-17 15:56:30,204: INFO: map an employee (by SSO login identifier) to ai-staff clinical_role (create if new)
+2018-08-17 15:56:30,206: INFO: mapping employee login VitreaAdmin
+2018-08-17 15:56:30,209: INFO: employee login %s does not exist, creating new employee
+2018-08-17 15:56:30,218: INFO: employee_id = 1
+2018-08-17 15:56:30,221: INFO: UTILS: closed Harbinger DB connection to localhost.harbinger-rw
+2018-08-17 15:56:30,221: INFO: UTILS: finished, script runtime was 0:00:00.028551

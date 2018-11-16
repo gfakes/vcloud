@@ -1,0 +1,12 @@
+Cnagios version 0.29
+polling interval is 90 seconds
+pad is 1, header_pad is 2
+
+read_status()...
+read_v23_status()...
+status file is /var/cache/nagios3/status.dat
+status file format is version 3
+last update was Tue Jan 22 12:59:28  (1358877568)
+START NEW HOST...
+  host_name is graylab1
+  current_state (0) is UP

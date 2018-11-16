@@ -1,0 +1,6 @@
+2018-08-17 16:39:28,779: INFO: UTILS: starting
+2018-08-17 16:39:28,787: INFO: UTILS: opened Harbinger DB connection to localhost.analyticscore
+2018-08-17 16:39:28,788: INFO: update facts configs with finance and formatting information
+2018-08-17 16:39:28,835: INFO: complete
+2018-08-17 16:39:28,835: INFO: UTILS: closed Harbinger DB connection to localhost.analyticscore
+2018-08-17 16:39:28,835: INFO: UTILS: finished, script runtime was 0:00:00.056211

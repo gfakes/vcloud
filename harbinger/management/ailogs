@@ -1,0 +1,49 @@
+#!/bin/bash
+if [ $# -lt 1 ]; then
+ echo "======================="
+ echo "AI Log Viewer"
+ echo " "
+ echo "   g for glassfish"
+ echo "   m for mirth"
+ echo "   dm for data-manager"
+ echo "   b for bridge log"
+ echo "   p for postgres"
+ echo "   i for indexer"
+ echo "======================="
+ echo " "
+ echo -n "Enter choice: "
+ read log
+else
+ log="$1"
+fi
+case $log in
+  glassfish)
+	tail -F /servers/harbinger/logs/glassfish/server.log;;
+  g)
+	tail -F /servers/harbinger/logs/glassfish/server.log;;
+  mirth)
+	tail -F /servers/harbinger/logs/mirth/mirth.log;;
+  m)
+	tail -F /servers/harbinger/logs/mirth/mirth.log;;
+  data-manager)
+	tail -F /servers/harbinger/logs/data_manager/sasl-error.log;;
+  dm)
+	tail -F /servers/harbinger/logs/data_manager/sasl-error.log;;
+  postgres)
+	sudo tail -F /data/pgdata/serverlog;;
+  p)
+	sudo tail -F /data/pgdata/serverlog;;
+  indexer)
+	sudo tail -F /servers/indexer/logs/indexer.log;;
+  i)
+	sudo tail -F /servers/indexer/logs/indexer.log;;
+  bridge)
+	tail -F /servers/harbinger/logs/bridge-service.log;;
+  b)
+	tail -F /servers/harbinger/logs/bridge-service.log;;
+  *)
+        echo "option not found"
+	;;
+
+
+esac

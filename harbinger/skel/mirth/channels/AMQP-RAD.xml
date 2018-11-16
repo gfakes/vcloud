@@ -1,0 +1,117 @@
+<channel>
+  <id>cbd13f20-36c5-40ee-ab7e-625319b49703</id>
+  <name>AMQP-RAD</name>
+  <description>etl_requests prod.hl7.radiology</description>
+  <enabled>true</enabled>
+  <version>2.1.0.5389</version>
+  <lastModified>
+    <time>1453913012046</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>15</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+      <property name="responseValue">None</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>HL7V2</inboundProtocol>
+      <outboundProtocol>HL7V2</outboundProtocol>
+      <inboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictParser">false</property>
+        <property name="useStrictValidation">false</property>
+        <property name="handleSubcomponents">false</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictParser">false</property>
+        <property name="useStrictValidation">false</property>
+        <property name="handleSubcomponents">false</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.1.0.5389</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>prod.hl7.radiology</name>
+      <properties>
+        <property name="script">importPackage(com.rabbitmq.client);
+var cfconn = new ConnectionFactory();
+cfconn.setHost(&quot;localhost&quot;);
+cfconn.setUsername(&quot;harbinger&quot;);
+cfconn.setPassword(&quot;superguest12&quot;);
+var conn = cfconn.newConnection();
+var ch = conn.createChannel();
+var themessage = messageObject.getRawData();
+ch.exchangeDeclare(&quot;etl_requests&quot;,&quot;topic&quot;,true);
+ch.basicPublish(&quot;etl_requests&quot;,&quot;prod.hl7.radiology&quot;,MessageProperties.PERSISTENT_BASIC,themessage.getBytes());
+ch.close();
+conn.close();</property>
+        <property name="DataType">JavaScript Writer</property>
+        <property name="host">sink</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundProtocol>HL7V2</inboundProtocol>
+        <outboundProtocol>HL7V2</outboundProtocol>
+        <inboundProperties>
+          <property name="handleRepetitions">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+          <property name="useStrictParser">false</property>
+          <property name="useStrictValidation">false</property>
+          <property name="handleSubcomponents">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="handleRepetitions">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+          <property name="useStrictParser">false</property>
+          <property name="useStrictValidation">false</property>
+          <property name="handleSubcomponents">false</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>JavaScript Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.1.0.5389</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="synchronous">true</property>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="transactional">false</property>
+    <property name="initialState">started</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">true</property>
+    <property name="max_message_age">14</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>

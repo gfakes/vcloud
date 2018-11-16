@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=1" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=1" sizes="16x16">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1" color="#f58619">
+    <link rel="shortcut icon" href="/favicon.ico?v=1">
+    <meta name="theme-color" content="#f58619">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vitrea® Intelligence</title>
+    <style type="text/css">
+      html, body { margin: 0; padding: 0; }
+      body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande"; font-weight: 300; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: none; }
+
+      html {
+	background: url('VitreaIntelligenceBG.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+      }
+      .logo {
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+        padding-top: 30px;
+      }
+      #nav-seperator { width: 100%; height: 5px; background-color: #333; opacity: 0.8; margin-bottom: 20px; }
+
+      div.container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	max-height: 100%;
+        margin-top: 20px;
+      }
+
+      .footer {
+        color: #fff;
+        margin-top: 15em;
+        text-align: center;
+      }
+
+      .footer img {
+        margin: auto auto;
+        vertical-align: middle;
+        display: block;
+      }
+
+      .footer .version {
+        margin-top: 20px;
+        font-size: small;
+        opacity: .6;
+
+      }
+
+      div.app-container {
+        margin: auto auto;
+        height: 100%;
+        text-align: left;
+        vertical-align: middle;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+      }
+      div.app {
+        cursor: pointer;
+        display: inline-block;
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 140px;
+        padding: 0px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        /*margin-right: 20px;
+        background-color: #cfcfcf;
+        border-radius: 10px;
+        border: 4px solid #b3b3b3;*/
+        text-align: center;
+        vertical-align: middle;
+      }
+      img.icon {
+        width: 100px;
+        height: 100px;
+      }
+      img.icon:hover { border-color: #f8981d; }
+      .app h3 { font-size: 15px; margin: 0; padding: 0; font-weight: normal; color: black; }
+      footer {
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+        text-align: right;
+        color: #6D6E71;
+      }
+
+      /* Widths below for app-containers  need to be multiples of the set app width above (~line 49) */
+
+      @media only screen and (min-width: 200px) {
+        div.container { width: 120px; }
+        div.container .logo { width: 100%; }
+      }
+      @media only screen and (min-width: 400px) {
+        /* 110 * 3 + 25 + 25 = 380px  */
+        div.container { width: 380px; }
+        div.app-container{ padding-left: 25px; padding-right: 25px; }
+        /* outer width would be 90 + 20 = 110px  */
+        div.app { width: 90px; height: 120px; }
+        img.icon { width: 70px; height: 70px; }
+        div.container .logo { width: 100%; }
+      }
+      @media only screen and (min-width: 600px) {
+        /* 120 * 3 + 50 + 50 = 460px */
+        div.app-container{ padding-left: 50px; padding-right: 50px; }
+        div.container { width: 460px; }
+        /* outer width would be 100 + 20 = 120px  */
+        div.app { width: 100px; height: 120px; }
+        img.icon { width: 100px; height: 100px; }
+        div.container .logo { width: auto; }
+      }
+      @media only screen and (min-width: 800px) {
+        /* 120 * 5 + 75 + 75 = 750px */
+        div.container { width: 750px; }
+        div.app-container{ padding-left: 75px; padding-right: 75px; }
+      }
+      @media only screen and (min-width: 1500px) {
+        /* 120 * 5 + 100 + 100 = 750px */
+        div.container { width: 800px; }
+        div.app-container{ padding-left: 100px; padding-right: 100px; }
+      }
+      @media only screen and (max-height: 500px) {
+        div.container {
+          top: 10px;
+	  transform: translate(-50%);
+          -webkit-transform: translate(-50%);
+          -ms-transform: translate(-50%);
+        }
+      }
+
+      @media only screen and (max-width: 800px) {
+        .footer { margin-top: 5em; }
+      }
+
+      @media only screen and (max-height: 700px) {
+        .footer { margin-top: 5em; }
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="gray-container" style="background: lightgray; border-radius: 5px;">
+        <img class="logo" src="VitreaIntelligence_Logo.png" />
+        <div class="app-container">
+          <div class="app">
+            <a href="/analytics-core/quality" target="_blank">
+              <img class="icon" src="VitreaIntelligence_Icon_KPIDash.png" />
+              <h3>KPI Dashboard</h3>
+            </a>
+          </div><div class="app">
+            <a href="/analytics-core/productivity" target="_blank">
+              <img class="icon" src="VitreaIntelligence_Icon_OnDemandRep.png" />
+              <h3>On-Demand Reporting</h3>
+            </a>
+          </div><div class="app">
+            <a href="/scanner-utilization" target="_blank">
+              <img class="icon" src="VitreaIntelligence_Icon_ResUtil.png" />
+              <h3>Scanner Utilization</h3>
+            </a>
+          </div><div class="app">
+            <a href="/report-search" target="_blank">
+              <img class="icon" src="VitreaIntelligence_Icon_ClinRepSearch.png" />
+              <h3>Clinical Report Search</h3>
+            </a>
+          </div><div class="app">
+            <a href="/service-tools" target="_blank">
+              <img class="icon" src="VitreaIntelligence_Icon_ServTools.png" />
+              <h3>Service Tools</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="clear: left;"></div>
+      <div class="footer">
+        <img class="" src="VitreaIntelligence_VitalFooterLogo.png" />
+        <div class="version">Version _VERSION_</div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

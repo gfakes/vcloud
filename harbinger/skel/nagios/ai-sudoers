@@ -1,0 +1,6 @@
+nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_rabbitmq_queue_length
+nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_for_ftp_files
+nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_postgres_connections.rb
+nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_mirth_queue.rb
+nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_data_manager
+nagios ALL=(ALL) NOPASSWD:/usr/sbin/service

@@ -1,0 +1,3 @@
+#TODO
+* update data quality aggregator: add backfill flag w/ date range
+* new: analyze data quality script

@@ -1,0 +1,93 @@
+{
+  "analyticscore": {
+    "login": "analyticscore",
+    "password": "9a8ojefw8ajasdiul"
+  },
+  "customer": {
+    "host": "aidemo.example.com",
+    "name": "Example Health System",
+    "env": "production"
+  },
+  "icd_codes": {
+    "active": [
+      "icd9dx",
+      "icd10dx"
+    ]
+  },
+  "harbinger": {
+    "login": "roharbinger",
+    "password": "s4f3forSDKuse.",
+    "host": "localhost",
+    "database": "harbinger"
+  },
+  "icd10dx": {
+    "version": "ICD-10-CM",
+    "filepath": "/servers/harbinger/harbinger/data/ICD10CM_FY2017.zip"
+  },
+  "amqp": {
+    "login": "harbinger",
+    "password": "superguest12",
+    "host": "localhost"
+  },
+  "icd9dx": {
+    "version": "ICD-9-CM",
+    "filepath": "/servers/harbinger/harbinger/data/cmsv31-master-descriptions.zip"
+  },
+  "reports": {
+    "body": "This is an automated email message from AI Bridge.\n\nAttached to this email are one or more reports that are automatically generated, and will be provided on a regular basis.\n\nPlease do not reply to this message. To change the frequency of these reports or to add additional metrics, please contact your system administrator.",
+    "from": "do-not-reply <do-not-reply@example.com>"
+  },
+  "nagios": {
+    "hipchat-room": "Replace-With-Customer-Room",
+    "hipchat-token": ""
+  },
+  "local-paths": {
+    "data-dir": "/servers/harbinger/data",
+    "reports-dir": "/servers/harbinger/reports/archive",
+    "logging-dir": "/servers/harbinger/logs",
+    "apps-dir": "/servers/harbinger/apps",
+    "config-dir": "/servers/harbinger/config",
+    "media-assets": "/servers/nfs/cache",
+    "local-backups": "/servers/local-backup",
+    "remote-backups": "/servers/remote-backup"
+  },
+  "scanner-utilization": {
+    "login": "scannerutilization",
+    "password": "r4Tq18se57x1K-h"
+  },
+  "amqp-apps": {
+    "vhost": "apps",
+    "host": "localhost",
+    "user": "amqpapps",
+    "pass": "apps4amqp89"
+  },
+  "logging": {
+    "service-file": "bridge-service.log",
+    "python-level": 20,
+    "human-level": "INFO",
+    "ruby-level": 1
+  },
+  "hcpcs": {
+    "filepath": "/servers/harbinger/harbinger/data/RVU17A.zip"
+  },
+  "ldap": {
+    "admin_dn": "CN=Directory Manager",
+    "password": "password",
+    "uri": "ldap://localhost:1389",
+    "base_dn": "OU=Users, DC=analytical, DC=info"
+  },
+  "mirth": {
+    "login": "mirth",
+    "password": "Lu8kQQDXtVBd",
+    "host": "localhost",
+    "database": "mirthdb"
+  },
+  "harbinger-rw": {
+    "login": "harbinger",
+    "password": "hcR3volution!"
+  },
+  "report-search": {
+    "login": "aisearch",
+    "password": "94hb9ij"
+  }
+}
